@@ -9,15 +9,17 @@
 
       <style>
         h1 {
-          font-size: 40px;
+          font-size: 30px;
           font-family: Lato;
-          font-weight: normal;
+          font-weight: bold;
           color: rgb(50, 50, 50);
         }
         h2 {
-          font-size: 25px;
+          font-size: 20px;
           font-family: Lato;
-          font-weight: bold;
+          font-weight: normal;
+          margin-top: 10px;
+          margin-bottom: 10px;
           color: rgb(70, 70, 70);
         }
         h3 {
@@ -35,24 +37,34 @@
         #banner {
           width: 100%;
           height: 360px;
-          object-fit: cover
+          object-fit: cover;
+          margin-bottom: 20px;
         }
         #container {
-          max-width: 720px;
+          max-width: 1000px;
           margin: 0 auto;
         }
       </style>
     </head>
     <body>
       {% include 'nav.html' %}
+      <img class="img-fluid" 
+ id="banner" src="https://flask.davidrutiz.repl.co/static/space.jpg">
       <div id="container">
-        <h1 style="padding-top:80px;" class="text-center mb-2">Available Jobs</h1>
-              <h2 class="text-center">April 16, 2023</h2>
-              <img class="img-fluid" 
- id="banner" src="https://flask.davidrutiz.repl.co/static/logo.jpg">
-      <p class="bodyText mb-2 mt-2">Silas Marner: The Weaver of Rabiot is the third novel by George Eliot. It was published in 1861. An outwardly simple tale of a linen weaver, the novel is notable for its strong realism and its sophisticated treatment of a variety of issues ranging from religion to industrialisation to community.</p>
-        <h2 class="text-center mb-4 mt-4">See Jobs here:</h2>
-        <div>
+        <h1 style="margin:10px;" class="text-center mb-2">Available Jobs
+        </h1>
+        <h2 class="text-center">April 16, 2023</h2>
+        <div class="row" style="padding-bottom:25px">
+          <div class="col-6">
+        <p class="bodyText mb-2 mt-2">Silas Marner: The Weaver of Rabiot is the third novel by George Eliot. It was published in 1861. An outwardly simple tale of a linen weaver, the novel is notable for its strong realism and its sophisticated treatment of a variety of issues ranging from religion to industrialisation to community.
+        </p>
+          </div>
+          <div class="col-6">
+          <img src="https://flask.davidrutiz.repl.co/static/raider.jpg" style="height:320px;border-radius:4px;">
+        </div>
+      </div>
+      <h2 class="text-center mb-4 mt-4">See Jobs here:</h2>
+      <div>
             {% for i in job %}
               {% include 'jobItem.html' %}
             {% endfor %}
