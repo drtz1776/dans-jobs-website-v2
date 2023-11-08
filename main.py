@@ -22,6 +22,11 @@ def hello_world():
   return render_template('home.html', job=jobs)
 
 
+@app.route('/resources')
+def hello_world_resources():
+  return render_template('resources.html', job=jobs)
+
+
 @app.route("/api/jobs")
 def list_jobs():
   return jsonify(jobs)
